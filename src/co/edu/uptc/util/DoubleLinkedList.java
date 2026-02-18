@@ -105,10 +105,13 @@ public class DoubleLinkedList<T> implements List<T>{
 
     @Override
     public int lastIndexOf(Object o) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'lastIndexOf'");
         int output = size; // pq el size se sale de bounds no?
         boolean found = false;
+        
+        if (o==null) {
+            output = -1; // -1 cuando el objeto inicial es null
+            return output;
+        }
         
         while (output > 0 && !found) {
             output--;
